@@ -2,7 +2,7 @@ import { useMutation } from "@tanstack/react-query";
 import request from "../../../../config/request";
 
 interface LoginType {
-    phone_number: string;
+    username: string;
     password: string;
 }
 

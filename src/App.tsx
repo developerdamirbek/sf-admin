@@ -7,7 +7,6 @@ function App(): JSX.Element {
 
   return (
     <>
-
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<MainLayout />}>
@@ -19,5 +18,5 @@ function App(): JSX.Element {
     </>
   )
 }
-``
+
 export default App

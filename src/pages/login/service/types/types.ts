@@ -1,4 +1,4 @@
 export interface LoginType {
-    phone_number: string,
+    username: string,
     password: string
 }

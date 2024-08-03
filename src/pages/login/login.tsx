@@ -7,7 +7,7 @@ import { usePostUser } from './service/mutation/usePostUser';
 import Cookies from 'js-cookie'
 
 type FieldType = {
-  phone_number: string;
+  username: string;
   password: string;
 };
 
@@ -19,7 +19,7 @@ export const Login: React.FC = () => {
 
   React.useEffect(() => {
     if (Cookies.get("token")){
-      navigate('/app', {replace: true})
+      navigate('/', {replace: true})
     }
   },[])
 
