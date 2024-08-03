@@ -1,0 +1,40 @@
+.layout {
+    height: 100vh;
+    background-color: #F4F9FD;
+}
+
+.header {
+    padding: 0 20px;
+}
+
+.sidebar {
+    margin: 0;
+}
+
+.logo-block {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.logo {
+    color: #000;
+    font-size: 24px;
+}
+
+.logo-title {
+    color: #000;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.sidebar_menu {
+    height: 100%;
+    background-color: #fff !important;
+}
+
+.ant-layout-sider-children {
+    background-color: #fff;
+    color: #000;
+}
