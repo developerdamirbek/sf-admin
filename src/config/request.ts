@@ -11,7 +11,7 @@ const request: AxiosInstance = axios.create({
 
 request.interceptors.request.use(
   (config) => {
-    if (config.url !== "/api/admin-login/") {
+    if (config.url !== "/api/token/") {
       config.headers['Authorization'] = `Token ${Cookies.get('token')}` 
     }
     return config;
