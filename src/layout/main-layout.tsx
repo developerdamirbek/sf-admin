@@ -18,8 +18,8 @@ export const MainLayout: React.FC = () => {
   const navigate = useNavigate();
   const token = Cookies.get('token');
 
-  if (token) {
-    window.location.replace("/");
+  if (!token) {
+    window.location.replace("/login");
   }
 
   const {
@@ -65,8 +65,8 @@ export const MainLayout: React.FC = () => {
           defaultSelectedKeys={['1']}
           items={items}
         />
-        <div style={{ position: 'absolute', bottom: '0', width: '100%', padding: '16px', textAlign: 'center' }}>
-          <LogoutOutlined onClick={showConfirm} style={{ fontSize: 20, color: "black" }} />
+        <div style={{ position: 'absolute', bottom: '0', width: '100%', padding: '16px', textAlign: 'left', display: 'flex', alignItems: 'center', justifyContent: 'start', gap: '8px', paddingLeft: '24px' }}>
+           <LogoutOutlined onClick={showConfirm} style={{ fontSize: 18, color: "black" }} /> Logout
         </div>
       </Sider>
       <Layout>

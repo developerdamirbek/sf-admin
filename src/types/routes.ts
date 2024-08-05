@@ -1,4 +1,4 @@
-export interface RoutesType {
+export type RoutesType = {
     id: string,
     name: string,
     path?: string,
