@@ -5,11 +5,12 @@ import {
   ExclamationCircleFilled,
   LogoutOutlined,
 } from '@ant-design/icons';
-import { Layout, Menu, Modal, message, theme, Button } from 'antd';
+import { Layout, Menu, Modal, theme, Button } from 'antd';
 import './style.scss';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { menu } from './data/menu';
 import Cookies from 'js-cookie';
+import Swal from 'sweetalert2';
 
 const { confirm } = Modal;
 const { Header, Sider, Content } = Layout;
@@ -41,7 +42,12 @@ export const MainLayout: React.FC = () => {
       onOk() {
         Cookies.remove("token");
         navigate("/login");
-        message.success("You logged out successfully!");
+        Swal.fire({
+          icon: 'info',
+          title: 'You are logged out',
+          showConfirmButton: false,
+          timer: 1500
+        })
       }
     });
   };

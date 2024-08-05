@@ -1,10 +1,11 @@
 import React from 'react';
-import { Form, Input, Button, Row, Col, message, Typography } from 'antd';
+import { Form, Input, Button, Row, Col, Typography } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import './style.scss';
 import { Link, useNavigate } from 'react-router-dom';
 import { usePostUser } from './service/usePostUser';
 import Cookies from 'js-cookie';
+import Swal from 'sweetalert2';
 
 type FieldType = {
   username: string;
@@ -20,17 +21,26 @@ export const Login: React.FC = () => {
     if (Cookies.get("token")) {
       navigate('/', { replace: true });
     }
-  }, []); // Add an empty dependency array to run the effect only once after the initial render
+  }, []); 
 
   const onFinish = (values: FieldType) => {
     mutate(values, {
       onSuccess: (res) => {
-        message.success("Login successfuly!");
+        Swal.fire({
+          icon: 'success',
+          title: 'Login successful!',
+          showConfirmButton: false,
+          timer: 1500
+        });
         navigate("/", { replace: true });
         Cookies.set("token", res.token, { expires: 7 });
       },
       onError: () => {
-        message.error("Incorrect Password or Username!");
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Incorrect Password or Username!'
+        });
       }
     });
   };
